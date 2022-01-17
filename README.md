@@ -14,13 +14,10 @@ This Repository contains the resolution of the 'Summer 2022 Data Science Intern 
   
 
 ## Question 2
-
+ For this question you’ll need to use SQL. Follow this link to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
+ 
   a. How many orders were shipped by Speedy Express in total?
   
-  ANS: 54
-  
-  SELECT ShipperID FROM [Orders] 
-  WHERE ShipperID = 1
   b. What is the last name of the employee with the most orders?
-  ANS:
+  
   c. What product was ordered the most by customers in Germany?
