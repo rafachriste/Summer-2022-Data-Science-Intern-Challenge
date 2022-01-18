@@ -6,11 +6,15 @@ This Repository contains the resolution of the 'Summer 2022 Data Science Intern 
  On Shopify, we have exactly 100 sneaker shops, and each of these shops sells only one model of shoe. We want to do some analysis of the average order value (AOV).  When we look at orders data over a 30 day window, we naively calculate an AOV of $3145.13. Given that we know these shops are selling sneakers, a relatively       affordable item, something seems wrong with our analysis. 
 
   a. Think about what could be going wrong with our calculation. Think about a better way to evaluate this data. 
+   - When the total order amount is divided by 5,000, we assume that the amount of shoes purchased in orders does not vary as much as it actually does. For instance, we have some orders whose value reaches $704,000, increasing the AOV a lot. It is also easy to notice the presence of outliers in the data when comparing measures of central tendency, as the median and mode are more similar and the mean is a much higher value.
+When we put the data into a histogram, we can see that majority of the order value is below $3,000 (even less than the AOV).
 
   b. What metric would you report for this dataset? 
+   - When we check the outliers and the majority of the order values we can see that those 63 outliers are very distinct than the majority of the average order amount and we have to process them separately. Therefore, I would report either the Median or the mean of the order values without the outliers, as more accurate values.
  
   c. What is its value?
-  
+   - Median: 284
+   - Mean of the order values without the outliers: 302.58
   
 
 ## Question 2
