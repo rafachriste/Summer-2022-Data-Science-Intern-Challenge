@@ -17,7 +17,49 @@ This Repository contains the resolution of the 'Summer 2022 Data Science Intern 
  For this question you’ll need to use SQL. Follow this link to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
  
   a. How many orders were shipped by Speedy Express in total?
-  
+     
+```mysql
+SELECT COUNT(*) 
+FROM Orders o
+JOIN Shippers s ON o.ShipperID = s.ShipperID
+WHERE s.ShipperName = "Speedy Express";
+```
+
+  - Answer: 54 
+     
   b. What is the last name of the employee with the most orders?
   
+```mysql
+SELECT e.LastName, COUNT(*)
+FROM Employees e
+JOIN Orders o ON e.EmployeeID = o.EmployeeID
+GROUP BY o.EmployeeID 
+ORDER BY COUNT(*) DESC
+LIMIT 1
+```
+   - Answer: 
+  
+|LastName|Orders|
+|--------|------|
+|Peacock |  40  |
+
   c. What product was ordered the most by customers in Germany?
+  
+```mysql
+SELECT od.ProductID, p.ProductName, SUM(od.Quantity)
+FROM Orders o
+JOIN OrderDetails od ON o.OrderID = od.OrderID
+JOIN Products p ON od.ProductID = p.ProductID
+JOIN Customers c ON o.CustomerID = c.CustomerID
+WHERE c.Country = "Germany"
+GROUP BY od.ProductID
+ORDER BY SUM(od.Quantity) DESC
+LIMIT 1
+```
+   - Answer: 
+  
+|    ProductName     |Quantity|
+|--------------------|--------|
+|Boston Crab Meat    |   160  |
+ 
+  
