@@ -49,20 +49,20 @@ LIMIT 1
   c. What product was ordered the most by customers in Germany?
   
 ```mysql
-SELECT od.ProductID, p.ProductName, SUM(od.Quantity)
+SELECT od.ProductID, p.ProductName, COUNT(od.Quantity)
 FROM Orders o
 JOIN OrderDetails od ON o.OrderID = od.OrderID
 JOIN Products p ON od.ProductID = p.ProductID
 JOIN Customers c ON o.CustomerID = c.CustomerID
 WHERE c.Country = "Germany"
 GROUP BY od.ProductID
-ORDER BY SUM(od.Quantity) DESC
+ORDER BY COUNT(od.Quantity) DESC
 LIMIT 1
 ```
    - Answer: 
   
-|    ProductName     |Quantity|
-|--------------------|--------|
-|Boston Crab Meat    |   160  |
+|    ProductName     |Orders|
+|--------------------|------|
+|Gorgonzola Telino   |  160 |
  
   
