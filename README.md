@@ -10,10 +10,9 @@ This Repository contains the resolution of the 'Summer 2022 Data Science Intern 
 When we put the data into a histogram, we can see that majority of the order value is below $3,000 (even less than the AOV).
 
   b. What metric would you report for this dataset? 
-   - When we check the outliers and the majority of the order values we can see that those 63 outliers are very distinct than the majority of the average order amount and we have to process them separately. Therefore, I would report either the Median or the mean of the order values without the outliers, as more accurate values.
+   - When we check the outliers and the majority of the order values we can see that those 63 outliers are very distinct than the majority of the average order amount and we have to process them separately. Therefore, I would report either the Median or the mean of the order values without the outliers, as more accurate values (preferably the mean of the without the outliers).
  
   c. What is its value?
-   - Median: 284
    - Mean of the order values without the outliers: 302.58
   
 
